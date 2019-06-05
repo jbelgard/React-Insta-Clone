@@ -59,9 +59,10 @@ class Login extends Component {
     }
 }
 const button = {
-    wideth: '50%',
+    width: '75%',
     fontSize: '30px',
-    borderStyles: 'none'
+    borderStyles: 'none',
+    backgroundColor: 'white'
 };
 const inputs = {
     width: '70%',
@@ -69,13 +70,13 @@ const inputs = {
     margin: '10px'
 };
 const loginBox = {
-    margin: '0 auto',
+    margin: '50px auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     flexWrap: 'wrap',
     width: '500px',
-    height: '500px',
+    height: '300px',
     backgroundColor: 'black',
     color: 'white'
 };
