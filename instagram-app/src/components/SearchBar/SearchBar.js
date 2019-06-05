@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Logo from '../../img/image.png';
-import icons from '../../img/icons.png';
 
 const SearchBar = ({ searchHandler, searchPost }) => {
     return (

@@ -1,38 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
+import PostsPage from './components/PostContainer/PostsPage';
 
 class App extends Component {
-  static defaultProps = {
-    post: []
-  };
-  state = {
-    post: []
-  };
-  componentDidMount() {
-    this.setState({
-      post: dummyData
-    });
-  }
-  searchHandler = e => {
-    console.log(this.state.searchPost);
-    this.setState({
-      searchPost: e.target.value
-    });
-  };
   render() {
-    return(
+    return (
       <div className='App'>
-        <SearchBar
-          searchPost={this.searchPost}
-          searchHandler={this.searchHandler}
-        />
-        <PostContainer posts={this.state.post} />
+        <PostsPage />
       </div>
     );
-  }  
+  }
 }
 
 export default App
