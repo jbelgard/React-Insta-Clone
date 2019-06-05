@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 
 
-function Comment() {
-    return <div>dfs</div>;
+function Comment({ username, text }) {
+    return (
+        <>
+            {' '}
+            <p>
+                {' '}
+                <span>{username}</span> {text}
+            </p>
+        </>
+    );
 }
 
-export default Comment
+export default Comment;
