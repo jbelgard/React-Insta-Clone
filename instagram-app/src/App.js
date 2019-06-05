@@ -8,18 +8,22 @@ class App extends Component {
   static defaultProps = {
     post: []
   };
-
   state = {
-    post: dummyData
+    post: []
   };
+  componentDidMount() {
+    this.setState({
+      post: dummyData
+    });
+  }
   render() {
-    return (
+    return(
       <div className='App'>
         <SearchBar />
         <PostContainer posts={this.state.post} />
       </div>
     );
-  }
+  }  
 }
 
 export default App
