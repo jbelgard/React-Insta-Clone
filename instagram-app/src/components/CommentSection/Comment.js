@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 
 
-export class Comment extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+function Comment() {
+    return <div>dfs</div>;
 }
 
 export default Comment
