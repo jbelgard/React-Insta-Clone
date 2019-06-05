@@ -17,6 +17,10 @@ class PostsPage extends Component {
             post: dummyData
         });
     }
+    clear() {
+        window.localStorage.clear();
+        window.location.reload();
+    }
     searchHandler = e => {
         console.log(this.state.searchPost);
         this.setState({
@@ -26,9 +30,11 @@ class PostsPage extends Component {
     render() {
         return (
             <div className='App'>
-                <SearchBar />
-                searchPost={this.searchPost}
-                searchHandler={this.searchHandler}
+                <SearchBar
+                    clear={this.clear}
+                    searchPost={this.searchPost}
+                    searchHandler={this.searchHandler}
+                />
                 <PostContainer posts={this.state.post} />
             </div>
         );
