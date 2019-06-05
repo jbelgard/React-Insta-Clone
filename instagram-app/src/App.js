@@ -16,10 +16,19 @@ class App extends Component {
       post: dummyData
     });
   }
+  searchHandler = e => {
+    console.log(this.state.searchPost);
+    this.setState({
+      searchPost: e.target.value
+    });
+  };
   render() {
     return(
       <div className='App'>
-        <SearchBar />
+        <SearchBar
+          searchPost={this.searchPost}
+          searchHandler={this.searchHandler}
+        />
         <PostContainer posts={this.state.post} />
       </div>
     );

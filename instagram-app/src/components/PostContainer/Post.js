@@ -1,19 +1,44 @@
 import React, { Component } from 'react';
 import User from './User';
 import CommentSection from '../CommentSection/CommentSection';
+import Likes from '../Likes/Likes';
 
-function Post({ post }) {
-    return (
-        <div style={border} className='border'>
-            <User username={post.username} thumbnaiilUrl={post.thumbnailUrl} />
-            <div>
-                <img style={picPost} src={post.imageUrl} alt='' />
+class Post extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            likes: props.post.likes,
+            username: props.post.username,
+            thumbnailUrl: props.post.thumbnailUrl,
+            comments: props.post.comments,
+            imageUrl: props.post.imageUrl
+        };
+    }
+    increaseLike = () => {
+        let likes=this.state.likes +1;
+        this.setState({ likes });
+    };
+    render() {
+        return (
+            <div style={border} className='border'>
+                <User
+                    username={this.state.username} 
+                    thumbnaiilUrl={this.state.thumbnailUrl} 
+                />
+                <div>
+                    <img style={picPost} src={this.state.imageUrl} alt='' />
+                </div>
+                <Likes 
+                    id={this.state.imageUrl}
+                    increaseLike={this.increaseLike}
+                    likes={this.state.likes}
+                />
+                <div>
+                    <CommentSection comments={this.state.comments} />
+                </div>
             </div>
-            <div>
-                <CommentSection comments={post.comments} />
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 const picPost = {

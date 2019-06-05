@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Post from './Post';
 import './postcontainer.css';
 
-function PostContainer({ posts }) {
+function PostContainer({ search, posts }) {
     return (
         <div className='postcontainer'>
             {posts.map((post, index) => (
-                <Post key={index} post={post} />
+                <Post search={search} key={index} post={post} />
             ))}
         </div>
     );
