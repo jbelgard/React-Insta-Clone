@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Logo from '../../img/image.png';
 import styled from 'styled-components';
 
-const SearchBar = ({ clear, searchHandler, searchPost }) => {
+const SearchBar = props => {
     return (
       <SearchBar_container>
         <div>
@@ -10,14 +10,16 @@ const SearchBar = ({ clear, searchHandler, searchPost }) => {
             alt="instagram logo"
             src={Logo}
             className="logo-image"
-            onClick={clear}
           />
         </div>
-        <div>
-          <form onSubmit={searchPost}>
-            <Input onKeyDown={searchHandler} type="text" placeholder="Search" />
-          </form>
-        </div>
+        <InputWrapper>
+            <SearchIcon className='fas fa-search' />
+            <SearchInput
+                type='text'
+                placeholder='Search'
+                onKeyDown={props.searchPosts}
+            />
+        </InputWrapper>
         <Social_wrapper>
           <Social>
             <i className="far fa-compass" />
@@ -57,6 +59,23 @@ const SearchBar = ({ clear, searchHandler, searchPost }) => {
     border: 2px solid lightgray;
   `;
   
+  const InputWrapper = styled.div`
+    width: 300px;
+    margin: auto;
+    display: flex;
+    `;
+
+  const SearchInput = styled.input`
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    `;
+    const SearchIcon = styled.i`
+    position: absolute;
+    display: inline;
+    top: 33px;
+    padding-left: 10px;
+  `;
   const Social_wrapper = styled.div`
     display: flex;
     font-size: 25px;

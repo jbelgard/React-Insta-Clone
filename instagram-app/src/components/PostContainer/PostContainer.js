@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Post from './Post';
-import './postcontainer.css';
+import styled from 'styled-components';
 
 function PostContainer({ search, posts }) {
     return (
-        <PostContainer>
+        <PostContainer1>
             {posts.map((post, index) => (
                 <Post search={search} key={index} post={post} />
             ))}
-        </PostContainer>
+        </PostContainer1>
     );
 }
 

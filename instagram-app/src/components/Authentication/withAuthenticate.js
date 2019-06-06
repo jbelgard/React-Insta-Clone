@@ -7,4 +7,4 @@ const withAuthenticate = (PostPage, Login) => props => {
     return <Login {...props} />;
 };
 
-export default withAuthenticate
+export default withAuthenticate;

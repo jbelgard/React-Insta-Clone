@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Comment from './Comment';
 import CommentInput from './CommentInput';
+import styled from 'styled-components';
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -30,11 +31,11 @@ class CommentSection extends React.Component {
     render() {
         return (
             <div>
-                <div style={comment1}>
-                   {this.state.comments.map((c, index) => (
-                       <Comment text={c.text} username={c.username} key={index} />
-                   ))}
-                </div>
+                <Comment1>
+                    {this.state.comments.map((c, index) => (
+                    <Comment text={c.text} username={c.username} key={index} />
+                     ))}
+                </Comment1>
                 <CommentInput
                     handleAddComment={this.addComment}
                     handleInput={this.handleInput}
@@ -53,10 +54,10 @@ CommentSection.propTypes = {
 
 
 
-const comment1 ={
-    borderBottom: '1px solid lightGray',
-    margin: '0px 10px',
-    marginTop: '10px'
-};
+const Comment1 = styled.div`
+  border-bottom: 1px solid lightGray;
+  margin: 0px 10px;
+  margin-top: 10px;
+`;
 
 export default CommentSection;

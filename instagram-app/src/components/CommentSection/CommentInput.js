@@ -21,7 +21,7 @@ function CommentInput({ value, handleInput, handleAddComment }) {
     font-size: 20px;
   `;
   
-  const I = styled.input`
+  const I = styled.i`
     float: right;
     margin: 25px 0;
     margin-right: 10px;
