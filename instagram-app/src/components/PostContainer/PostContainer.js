@@ -4,12 +4,17 @@ import './postcontainer.css';
 
 function PostContainer({ search, posts }) {
     return (
-        <div className='postcontainer'>
+        <PostContainer>
             {posts.map((post, index) => (
                 <Post search={search} key={index} post={post} />
             ))}
-        </div>
+        </PostContainer>
     );
 }
+
+const PostContainer1 = styled.div`
+  width: 60%;
+  margin: 30px auto;
+`;
 
 export default PostContainer
