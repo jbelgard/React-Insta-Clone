@@ -1,17 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
 function Likes({ increaseLike, likes }) {
     return (
         <div>
-            <strong>{likes}</strong>
-            <i onClick={increaseLike} style={space} className='far fa-heart' />
-            <i style={space} className='far fa-comment' />
+            <SLikes>{likes}</SLikes>
+            <I onClick={increaseLike} className='far fa-heart' />
+            <I className='far fa-comment' />
         </div>
     );
 }
 
-const space = {
-    paddingRight: '20px'
-}
+const SLikes = styled.div`
+  margin: 0 10px;
+  font-weight: bold;
+`;
+
+const I = styled.i`
+  margin: 5px 10px;
+  font-size: 25px;
+`;
 
 export default Likes
